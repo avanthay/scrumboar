@@ -1,9 +1,6 @@
 var express = require('express'),
     app = express(),
     router = express.Router(),
-    CardList = require('../models/CardList'),
-    Card = require('../models/Card'),
-    cardList = cardList || new CardList(),
     http = require('http').Server(app),
     io = require('socket.io')(http);
 
@@ -17,9 +14,7 @@ io.on('connection', function (socket) {
 });
 
 router.get('/', function(req, res, next) {
-  mycard = new Card();
-  cardList.add(mycard);
-  res.render('index', { cards: cardList });
+  res.render('index', { });
 });
 
 module.exports = router;

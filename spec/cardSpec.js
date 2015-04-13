@@ -1,6 +1,5 @@
 describe('Card', function() {
-    var Card = require('../../models/Card'),
-        card;
+    var card;
 
     beforeEach(function() {
         card = new Card();

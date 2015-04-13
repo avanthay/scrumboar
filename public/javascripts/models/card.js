@@ -1,5 +1,3 @@
-var Backbone = require('backbone');
-
 var Card = Backbone.Model.extend({
     defaults: {
         title: 'new card',
@@ -20,4 +18,17 @@ var Card = Backbone.Model.extend({
     }
 });
 
-module.exports = Card;
+var CardView = Backbone.View.extend({
+    tagName: 'li',
+    className: 'card',
+
+    initialize: function(attrs) {
+        this.id = attrs('model') ? 'card-' + attrs('model').id : null;
+        this.listenTo(this.model, "change", this.render);
+    },
+
+    render: function() {
+        this.$el.html();
+        return this;
+    }
+});

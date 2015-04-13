@@ -1,12 +1,11 @@
 extends layout
 
 block scripts
-  script.
-    var socket = io('http://localhost:8080/');
-    socket.on('news', function(data) {
-      console.log(data);
-      socket.emit('my other event', {my: 'data'});
-    });
+  script(src='/javascripts/underscore-min.js')
+  script(src='/javascripts/backbone-min.js')
+  script(src='/javascripts/models/card.js')
+  script(src='/javascripts/models/cardList.js')
+  script(src='/javascripts/main.js')
 
 block content
   h1 scrumboar - an awesome virtual scrum board

@@ -1,5 +1,18 @@
 extends layout
 
+block scripts
+  script.
+    var socket = io('http://localhost:8080/');
+    socket.on('news', function(data) {
+      console.log(data);
+      socket.emit('my other event', {my: 'data'});
+    });
+
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 scrumboar - an awesome virtual scrum board
+  .col-md-4.col-sm-12.card-container.to-do-container
+    h3 to do
+  .col-md-4.col-sm-12.card-container.in-progress-container
+    h3 in progress
+  .col-md-4.col-sm-12.card-container.done-container
+    h3 done

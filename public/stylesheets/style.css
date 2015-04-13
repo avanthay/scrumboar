@@ -1,8 +1,18 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #CCCCCC;
+  background-image: url('/images/background.png');
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-container {
+  min-height: 300px;
+}
+.card-container > h3 {
+  margin-top: 0;
+  text-align: center;
 }

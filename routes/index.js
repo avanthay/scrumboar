@@ -1,9 +1,25 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+    app = express(),
+    router = express.Router(),
+    CardList = require('../models/CardList'),
+    Card = require('../models/Card'),
+    cardList = cardList || new CardList(),
+    http = require('http').Server(app),
+    io = require('socket.io')(http);
 
-/* GET home page. */
+http.listen(8080);
+
+io.on('connection', function (socket) {
+    socket.emit('news', { hello: 'world' });
+    socket.on('my other event', function (data) {
+        console.log(data);
+    });
+});
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  mycard = new Card();
+  cardList.add(mycard);
+  res.render('index', { cards: cardList });
 });
 
 module.exports = router;

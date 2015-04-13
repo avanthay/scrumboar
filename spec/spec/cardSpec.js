@@ -10,6 +10,7 @@ describe('Card', function() {
     });
 
     it('should be defined', function() {
+        expect(Card).toBeDefined();
         expect(card).toBeDefined();
     });
 

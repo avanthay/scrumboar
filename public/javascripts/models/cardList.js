@@ -6,47 +6,35 @@ var CardList = Backbone.Collection.extend({
         return this.filter(function(card) {
             return card.get('status') == status;
         });
-    }
-
-});
-
-var CardListView = Backbone.View.extend({
-
-    cards: new CardList(),
-
-    events: {
-
     },
 
     appendCard: function(card) {
+        var self = this;
         $.each($('.card-container'), function() {
             if ($(this).data('status') == card.get('status')) {
-                var cardView = new CardView({model: card});
+                var cardView = new CardView({model: card, collection: self});
                 $(this).find('.cards').append(cardView.render().el);
             }
         });
     },
 
     updateTempId: function(tempId, newId) {
-        var card = this.cards.get(tempId);
+        var card = this.get(tempId);
         card.set('id', newId);
-        this.cards.set(card);
     },
 
     updateCard: function(card) {
-        var theCard = this.cards.get(card.id);
+        var theCard = this.get(card.id);
         theCard.set(card);
-        this.cards.set(theCard);
+    },
+
+    deleteCard: function(card) {
+        var theCard = this.get(card.id);
+        this.remove(theCard);
     },
 
     createCard: function(card) {
-        var newCard;
-        if (card.id) {
-            newCard = this.cards.set(card);
-        } else {
-            newCard = this.cards.create(card);
-        }
-        this.appendCard(newCard);
+        this.appendCard(this.create(card));
     },
 
     createCards: function(cards) {
@@ -54,6 +42,11 @@ var CardListView = Backbone.View.extend({
         $.each(cards, function(index, value) {
             self.createCard(value);
         });
+    },
+
+    resetCards: function(cards) {
+        this.reset();
+        this.createCards(cards);
     }
 
 });

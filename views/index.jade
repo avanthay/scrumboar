@@ -1,13 +1,14 @@
 extends layout
 
 block scripts
-  script(type='text/template' id='card-template').
-      <a href="#">
-        <h5><%- title %></h5>
-        <p><%- description %></p>
-        <p><%- effort %></p>
-        <p class="operator"><%- operator %></p>
-      </a>
+  script(type='text/template' id='card-template')
+    div
+      h5 <%- title %>
+      p(class='card-description') <%- description %>
+      p(class='card-effort') <%- effort %>
+      p(class='card-operator') <%- operator %>
+      button(class='card-save btn btn-default btn-sm' data-save='true')
+        span(class='glyphicon glyphicon-floppy-disk' aria-hidden='true' data-save='true')
   script(src='/javascripts/underscore-min.js')
   script(src='/javascripts/backbone-min.js')
   script(src='/javascripts/models/card.js')

@@ -32,6 +32,8 @@ http.listen(8080);
 io.on('connection', function(socket) {
     socket.emit('init', {cards: cards});
     socket.on('card', function(attrs) {
+console.log('event ' + attrs.method + ' incoming...');
+console.log('card with id ' + attrs.card.id + ' incoming...');
         if (attrs.method && attrs.card) {
             switch (attrs.method) {
                 case 'create':

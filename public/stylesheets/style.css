@@ -34,7 +34,7 @@ ul.cards {
     min-height: 400px;
 }
 
-ul.cards li a {
+ul.cards li div {
     text-decoration: none;
     color: #000;
     background: #ffc;
@@ -53,7 +53,23 @@ ul.cards li a {
     -webkit-transition: -webkit-transform .15s linear;
 }
 
-ul.cards li:nth-child(even) a {
+ul.cards li.effort-2 div {
+    background: #9cf;
+}
+
+ul.cards li.effort-3 div {
+    background: #cfc;
+}
+
+ul.cards li.effort-5 div {
+    background: #fcc;
+}
+
+ul.cards li.effort-8 div {
+    background: #f66;
+}
+
+ul.cards li:nth-child(even) div {
     -o-transform: rotate(4deg);
     -webkit-transform: rotate(4deg);
     -moz-transform: rotate(4deg);
@@ -61,7 +77,7 @@ ul.cards li:nth-child(even) a {
     top: 5px;
 }
 
-ul.cards li:nth-child(3n) a {
+ul.cards li:nth-child(3n) div {
     -o-transform: rotate(-3deg);
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
@@ -69,7 +85,7 @@ ul.cards li:nth-child(3n) a {
     top: -5px;
 }
 
-ul.cards li:nth-child(5n) a {
+ul.cards li:nth-child(5n) div {
     -o-transform: rotate(5deg);
     -webkit-transform: rotate(5deg);
     -moz-transform: rotate(5deg);
@@ -77,8 +93,8 @@ ul.cards li:nth-child(5n) a {
     top: -10px;
 }
 
-ul.cards li a:hover,
-ul.cards li a:focus {
+ul.cards li div:hover,
+ul.cards li div:focus {
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
@@ -87,6 +103,36 @@ ul.cards li a:focus {
     -o-transform: scale(1.25);
     position: relative;
     z-index: 5;
+}
+
+ul.cards li.card-edit {
+    position: fixed;
+    left: 43.5%;
+    z-index: 20;
+    margin-top: 50px;
+}
+
+ul.cards li.card-edit div {
+    -webkit-transform: rotate(0deg) scale(2.5);
+    -webkit-transition: none;
+    width: 18em;
+}
+
+ul.cards input,
+ul.cards textarea {
+    width: 100%;
+}
+
+ul.cards textarea {
+    min-height: 50px;
+}
+
+ul.cards select {
+    height: 20px;
+}
+
+ul.cards button {
+    margin-left: 85%;
 }
 
 ul.cards li {
@@ -99,13 +145,43 @@ ul.cards li h5 {
     margin-top: 0;
 }
 
-ul.cards li p {
+ul.cards li p.card-description {
     font-family: "Reenie Beanie", arial, sans-serif;
     font-size: 120%;
 }
 
-ul.cards li p.card-operator {
+ul.cards li.card-edit p.card-description,
+ul.cards li.card-edit p.card-operator {
     font-family: inherit;
-    font-size: 80%;
+    font-size: 10px;
+}
+
+ul.cards li p.card-operator {
+    font-size: 10px;
     text-align: right;
+}
+
+ul.cards li p.card-effort {
+    position: absolute;
+    top: 4px;
+    right: 9px;
+}
+
+ul.cards li.card-edit p.card-effort {
+    position: static;
+}
+
+ul.cards li button.card-save {
+    display: none;
+}
+
+ul.cards li.card-edit button.card-save {
+    display: block;
+}
+
+ul.cards {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
 }

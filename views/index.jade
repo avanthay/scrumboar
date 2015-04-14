@@ -1,17 +1,29 @@
 extends layout
 
 block scripts
+  script(type='text/template' id='card-template').
+      <a href="#">
+        <h5><%- title %></h5>
+        <p><%- description %></p>
+        <p><%- effort %></p>
+        <p class="operator"><%- operator %></p>
+      </a>
   script(src='/javascripts/underscore-min.js')
   script(src='/javascripts/backbone-min.js')
   script(src='/javascripts/models/card.js')
   script(src='/javascripts/models/cardList.js')
   script(src='/javascripts/main.js')
 
+mixin statusLane(status)
+  .col-md-4.col-sm-12.card-container(data-status=status)
+    h3= status
+      a(href="" title="Create new card" data-status=status)
+        span.glyphicon.glyphicon-pencil.create(aria-hidden=true)
+    ul.cards
+
 block content
   h1 scrumboar - an awesome virtual scrum board
-  .col-md-4.col-sm-12.card-container.to-do-container
-    h3 to do
-  .col-md-4.col-sm-12.card-container.in-progress-container
-    h3 in progress
-  .col-md-4.col-sm-12.card-container.done-container
-    h3 done
+  .row.containers
+    +statusLane('to do')
+    +statusLane('in progress')
+    +statusLane('done')

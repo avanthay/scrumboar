@@ -1,101 +1,111 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #CCCCCC;
-  background-image: url('/images/background.png');
+    font-family: Arial, Helvetica, sans-serif;
+    color: #CCCCCC;
+    background-image: url('/images/background.png');
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 h3 .create {
-  margin-left: 20px;
-  color: #CCCCCC;
+    margin-left: 20px;
+    color: #CCCCCC;
 }
 
 .card-container {
-  min-height: 300px;
-}
-.card-container > h3 {
-  margin-top: 0;
-  text-align: center;
+    min-height: 300px;
 }
 
+.card-container > h3 {
+    margin-top: 0;
+    text-align: center;
+}
 
 ul.cards,
 ul.cards li {
-  list-style:none;
+    list-style: none;
 }
+
 ul.cards {
-  overflow:hidden;
-  padding:3em;
-  min-height: 400px;
+    overflow: hidden;
+    padding: 3em;
+    min-height: 400px;
 }
-ul.cards li a{
-  text-decoration:none;
-  color:#000;
-  background:#ffc;
-  display:block;
-  min-height:10em;
-  width:10em;
-  padding:1em;
-  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  -webkit-transform:rotate(-6deg);
-  -o-transform:rotate(-6deg);
-  -moz-transform:rotate(-6deg);
-  -moz-transition:-moz-transform .15s linear;
-  -o-transition:-o-transform .15s linear;
-  -webkit-transition:-webkit-transform .15s linear;
+
+ul.cards li a {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    min-height: 10em;
+    width: 10em;
+    padding: 1em;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    -webkit-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transition: -webkit-transform .15s linear;
 }
-ul.cards li:nth-child(even) a{
-  -o-transform:rotate(4deg);
-  -webkit-transform:rotate(4deg);
-  -moz-transform:rotate(4deg);
-  position:relative;
-  top:5px;
+
+ul.cards li:nth-child(even) a {
+    -o-transform: rotate(4deg);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    position: relative;
+    top: 5px;
 }
-ul.cards li:nth-child(3n) a{
-  -o-transform:rotate(-3deg);
-  -webkit-transform:rotate(-3deg);
-  -moz-transform:rotate(-3deg);
-  position:relative;
-  top:-5px;
+
+ul.cards li:nth-child(3n) a {
+    -o-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
 }
-ul.cards li:nth-child(5n) a{
-  -o-transform:rotate(5deg);
-  -webkit-transform:rotate(5deg);
-  -moz-transform:rotate(5deg);
-  position:relative;
-  top:-10px;
+
+ul.cards li:nth-child(5n) a {
+    -o-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    position: relative;
+    top: -10px;
 }
+
 ul.cards li a:hover,
 ul.cards li a:focus {
-  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
-  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
-  box-shadow:10px 10px 7px rgba(0,0,0,.7);
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  -o-transform: scale(1.25);
-  position:relative;
-  z-index:5;
+    -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    position: relative;
+    z-index: 5;
 }
+
 ul.cards li {
-  margin:1em;
-  float:left;
+    margin: 1em;
+    float: left;
 }
+
 ul.cards li h5 {
-  font-weight: bold;
-  margin-top: 0;
+    font-weight: bold;
+    margin-top: 0;
 }
+
 ul.cards li p {
-  font-family: "Reenie Beanie",arial,sans-serif;
-  font-size: 120%;
+    font-family: "Reenie Beanie", arial, sans-serif;
+    font-size: 120%;
 }
-ul.cards li p.operator {
-  font-family: inherit;
-  font-size: 80%;
-  text-align: right;
+
+ul.cards li p.card-operator {
+    font-family: inherit;
+    font-size: 80%;
+    text-align: right;
 }

@@ -84,19 +84,12 @@ var CardView = Backbone.View.extend({
     },
 
     save: function() {
-        console.log({
-            title: this.$el.find('h5 input').val(),
-            description: this.$el.find('p.card-description textarea').val(),
-            effort: parseInt(this.$el.find('p.card-effort select').val()),
-            operator: this.$el.find('p.card-operator input').val()
-        });
         var success = this.model.save({
             title: this.$el.find('h5 input').val(),
             description: this.$el.find('p.card-description textarea').val(),
             effort: parseInt(this.$el.find('p.card-effort select').val()),
             operator: this.$el.find('p.card-operator input').val()
         });
-        console.log(success);
         if (success !== false) {
             this.render().$el.removeClass('card-edit');
         }

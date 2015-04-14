@@ -9,13 +9,8 @@ var CardList = Backbone.Collection.extend({
     },
 
     appendCard: function(card) {
-        var self = this;
-        $.each($('.card-container'), function() {
-            if ($(this).data('status') == card.get('status')) {
-                var cardView = new CardView({model: card, collection: self});
-                $(this).find('.cards').append(cardView.render().el);
-            }
-        });
+        var cardView = new CardView({model: card, collection: this});
+        cardView.render();
     },
 
     updateTempId: function(tempId, newId) {
@@ -34,6 +29,9 @@ var CardList = Backbone.Collection.extend({
     },
 
     createCard: function(card) {
+        if (!card.position) {
+            card.position = this.getCardsWithStatus(card.status).length;
+        }
         this.appendCard(this.create(card));
     },
 

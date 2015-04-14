@@ -1,7 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #CCCCCC;
-    background-image: url('/images/background.png');
+    background-image: url('/images/background.jpg');
+    background-size: 101%;
 }
 
 h1 {
@@ -114,7 +115,11 @@ ul.cards li.card-edit {
 
 ul.cards li.card-edit div {
     -webkit-transform: rotate(0deg) scale(2.5);
+    -moz-transform: rotate(0deg) scale(2.5);
+    -o-transform: rotate(0deg) scale(2.5);
     -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
     width: 18em;
 }
 
@@ -184,4 +189,30 @@ ul.cards {
     -moz-user-select: none;
     user-select: none;
     -ms-user-select: none;
+}
+
+div.delete {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -o-transform: scale(2.5);
+}
+
+div.delete span {
+    top: 35%;
+    left: 35%;
+}
+
+ul.cards li.card div.over {
+    background-color: red;
+}
+
+ul.cards li.card div.over span.glyphicon {
+    font-size: 80px;
+    margin-left: 11%;
+    margin-top: 13%;
 }

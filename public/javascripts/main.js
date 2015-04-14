@@ -41,4 +41,26 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.cards').sortable({
+        connectWith: '.cards',
+        update: function(event, ui) {
+            $('.card').trigger('sortupdate');
+        }
+    });
+
+    $('.delete').droppable({
+        tolerance: 'touch',
+        over: function(event, ui) {
+            ui.draggable.find('div').hide();
+            ui.draggable.append($('<div>').addClass('over').append($('<span>').addClass('glyphicon glyphicon-trash').attr('aria-hidden', true)));
+        },
+        out: function(event, ui) {
+            ui.draggable.find('.over').remove();
+            ui.draggable.find('div').show();
+        },
+        drop: function(event, ui) {
+            ui.draggable.trigger('drop');
+        }
+    });
+
 });

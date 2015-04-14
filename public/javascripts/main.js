@@ -1,4 +1,4 @@
-var socket = io(window.location.hostname + ':8080');
+var socket = io();
 
 socket.on('init', function(attrs) {
     if (attrs.cards) {

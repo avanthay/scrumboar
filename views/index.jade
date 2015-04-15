@@ -24,9 +24,10 @@ mixin statusLane(status)
 
 block content
   h1 scrumboar - an awesome virtual scrum board
-  .row.containers
-    +statusLane('to do')
-    +statusLane('in progress')
-    +statusLane('done')
-  div.delete(title="Drag a card over here to delete")
-    span.glyphicon.glyphicon-trash(aria-hidden="true")
+  .container-fluid
+    .row.containers
+      +statusLane('to do')
+      +statusLane('in progress')
+      +statusLane('done')
+    div.delete(title="Drag a card over here to delete")
+      span.glyphicon.glyphicon-trash(aria-hidden="true")

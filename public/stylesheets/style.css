@@ -132,10 +132,6 @@ ul.cards textarea {
     min-height: 50px;
 }
 
-ul.cards select {
-    height: 20px;
-}
-
 ul.cards button {
     margin-left: 85%;
 }

@@ -46,6 +46,8 @@ $(document).ready(function() {
         update: function(event, ui) {
             $('.card').trigger('sortupdate');
         }
+    }).doubletap(function(e) {
+        $(e.target).trigger('dblclick');
     });
 
     $('.delete').droppable({

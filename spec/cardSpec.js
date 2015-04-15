@@ -13,12 +13,28 @@ describe('Card', function() {
         expect(card).toBeDefined();
     });
 
-    it('should have a property title, description, effort, operator and status', function() {
-        expect(card.has('title')).toBe(true);
-        expect(card.has('description')).toBe(true);
-        expect(card.has('effort')).toBe(true);
-        expect(card.has('operator')).toBe(true);
-        expect(card.has('status')).toBe(true);
+    describe("Properties", function() {
+        it('should have an id', function() {
+            expect(card.id).toBeDefined();
+        });
+        it('should have a title', function() {
+            expect(card.has('title')).toBe(true);
+            expect(card.get('title').length).toBeGreaterThan(0);
+            card.set('title', 'foo');
+            expect(card.get('title')).toBe('foo');
+        });
+        it('should have a description', function() {
+            expect(card.has('description')).toBe(true);
+        });
+        it('should have an effort', function() {
+            expect(card.has('effort')).toBe(true);
+        });
+        it('should have an operator', function() {
+           expect(card.has('operator')).toBe(true);
+        });
+        it('should have a status', function() {
+            expect(card.has('status')).toBe(true);
+        });
     });
 
     describe("Validation", function() {

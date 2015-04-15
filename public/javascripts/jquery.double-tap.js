@@ -34,7 +34,7 @@
                 $(this).data('lastTouch', now);
                 action = setTimeout(function(evt){
                     if(onTapCallback != null && typeof onTapCallback == 'function'){
-                        onTapCallback(evt);
+                        onTapCallback(event);
                     }
                     clearTimeout(action);   // clear the timeout
                 }, delay, [event]);

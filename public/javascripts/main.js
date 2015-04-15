@@ -48,6 +48,8 @@ $(document).ready(function() {
         }
     }).doubletap(function(e) {
         $(e.target).trigger('dblclick');
+    }, function(e) {
+        $(e.target).focus();
     });
 
     $('.delete').droppable({
